@@ -28,23 +28,40 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'ohtu.ohtuvarasto.Main'
+// Kommentoidaan pois tilanne ennen uutta pakagea
+//mainClassName = 'ohtu.ohtuvarasto.Main'
+mainClassName = 'main.Main'
 
 // Nämä on itse lisättyjä
 
 // Tehdään JAR
 jar {
     manifest {
-        attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
+// Kommentoidaan pois tilanne ennen uutta pakagea
+//        attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
+        attributes 'Main-Class': 'main.Main'
     }
 }
 //  JaCoCo-plugin käyttöön
 apply plugin: "jacoco" 
 
 // Codecov vaatii tämän
+// Vanha kommentoitu
+//jacocoTestReport {
+//    reports {
+//        xml.enabled true
+//        html.enabled true
+//    }
+//}
 jacocoTestReport {
     reports {
         xml.enabled true
         html.enabled true
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: ['main/**'])
+        }))
     }
 }
