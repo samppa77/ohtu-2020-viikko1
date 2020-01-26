@@ -44,4 +44,4 @@ jobs:
       # Codecovin asennus vaatii nämä
       - run: ./gradlew check
       - run: ./gradlew jacocoTestReport
-  - run: bash <(curl -s https://codecov.io/bash)
+      - run: bash <(curl -s https://codecov.io/bash)
