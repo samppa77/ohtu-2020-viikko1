@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Mehuvarasto: " + mehua);
         System.out.println("Olutvarasto: " + olutta);
         System.out.println("Olutgetterit:");
-        System.out.println("getSaldo()     = " + olutta.getSaldo());
+        System.out.println("getSaldo()     = " + olutta.getSaldoTamaOnIhanLiianPitkaVaiMita());
         System.out.println("getTilavuus    = " + olutta.getTilavuus());
         System.out.println("paljonkoMahtuu = " + olutta.paljonkoMahtuu());
     }
