@@ -20,8 +20,9 @@
 	<module name="LeftCurly">
   		<property name="option" value="eol"/>
 	</module>
-
-
+	<module name="Checker">
+    		<property name="severity" value="warning"/>
+	</module>
     </module>
 
 </module>
